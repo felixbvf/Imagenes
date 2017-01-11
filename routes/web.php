@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('image-upload','ImageController@imageUpload');
 
 Route::post('image-upload','ImageController@imageUploadPost');
+Route::get('display1','ImageController@show');

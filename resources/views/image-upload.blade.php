@@ -31,6 +31,9 @@
         		<form action="{{ url('image-upload') }}" enctype="multipart/form-data" method="POST">
         			{{ csrf_field() }}
         			<div class="row">
+						<div class="col-md-12">
+        					Nombre Imagen:<input type="text" name="name" />
+        				</div>
         				<div class="col-md-12">
         					<input type="file" name="image" />
         				</div>

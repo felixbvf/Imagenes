@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Image;
 
 class ImageController extends Controller
 {
@@ -19,9 +20,19 @@ class ImageController extends Controller
         ]);
         $imageName = time().'.'.$request->image->getClientOriginalExtension();
         $request->image->move(public_path('images'), $imageName);
+        $image = new Image;
+        $image->name = $request->name;
+        $image->image = $imageName;
+        $image->save();
         return back()
         ->with('success','Image Uploaded successfully.')
         ->with('path',$imageName);
 
+
+    }
+
+    public function show(){
+        $images = Image::all();
+        return view('display',['images'=> $images]);
     }
 }
