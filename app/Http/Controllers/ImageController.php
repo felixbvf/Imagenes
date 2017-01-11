@@ -32,7 +32,7 @@ class ImageController extends Controller
     }
 
     public function show(){
-        $images = Image::all();
+        $images = Image::where('id','=', 4)->get();
         return view('display',['images'=> $images]);
     }
 }

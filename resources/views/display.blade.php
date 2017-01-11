@@ -24,9 +24,6 @@
                             <td>{{ $image->name }}</td>
                             <td>{{ $image->image }}</td>
                             <td><img src="images/{{ $image->image }}" alt="{{ $image->image}}" /></td>
-
-
-
                         </tr>
                         <?php
                         }
